@@ -21,7 +21,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.tv.foundation.lazy.list.TvLazyColumn
+import androidx.tv.foundation.lazy.list.items
 import androidx.tv.material3.ExperimentalTvMaterial3Api
+import androidx.tv.material3.Text
 import com.example.tvcomposeintroduction.data.Movie
 
 @OptIn(ExperimentalTvMaterial3Api::class)
@@ -34,4 +37,9 @@ fun CatalogBrowser(
     val categoryList by
     catalogBrowserViewModel.categoryList.collectAsState()
 
+    TvLazyColumn(modifier = modifier) {
+        items(categoryList) { category ->
+            Text(text = category.name)
+        }
+    }
 }
