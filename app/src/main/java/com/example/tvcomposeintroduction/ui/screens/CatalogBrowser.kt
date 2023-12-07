@@ -17,6 +17,8 @@
 package com.example.tvcomposeintroduction.ui.screens
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.material3.ExperimentalTvMaterial3Api
@@ -29,4 +31,7 @@ fun CatalogBrowser(
     catalogBrowserViewModel: CatalogBrowserViewModel = viewModel(),
     onMovieSelected: (Movie) -> Unit = {}
 ) {
+    val categoryList by
+    catalogBrowserViewModel.categoryList.collectAsState()
+
 }
