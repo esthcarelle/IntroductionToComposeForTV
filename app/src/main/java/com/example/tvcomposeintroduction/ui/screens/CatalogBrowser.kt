@@ -38,6 +38,11 @@ fun CatalogBrowser(
     TvLazyColumn(modifier = modifier) {
         items(categoryList) { category ->
             Text(text = category.name)
+            TvLazyRow {
+                items(category.movieList) {movie ->
+                    MovieCard(movie = movie)
+                }
+            }
         }
     }
 }
