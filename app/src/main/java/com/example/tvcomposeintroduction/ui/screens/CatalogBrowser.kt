@@ -46,7 +46,7 @@ fun CatalogBrowser(
     ) {
         items(categoryList) { category ->
             Text(text = category.name)
-            TvLazyRow {
+            TvLazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(category.movieList) {movie ->
                     MovieCard(movie = movie)
                 }
