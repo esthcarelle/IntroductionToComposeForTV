@@ -40,14 +40,15 @@ fun CatalogBrowser(
     val categoryList by
     catalogBrowserViewModel.categoryList.collectAsState()
 
-    TvLazyColumn(modifier = modifier,
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+    TvLazyColumn(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(horizontal = 48.dp, vertical = 32.dp)
     ) {
         items(categoryList) { category ->
             Text(text = category.name)
             TvLazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(category.movieList) {movie ->
+                items(category.movieList) { movie ->
                     MovieCard(movie = movie)
                 }
             }
