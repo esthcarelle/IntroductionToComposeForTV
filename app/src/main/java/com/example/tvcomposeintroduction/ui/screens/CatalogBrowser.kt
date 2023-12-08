@@ -22,9 +22,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.foundation.lazy.list.TvLazyColumn
+import androidx.tv.foundation.lazy.list.TvLazyRow
 import androidx.tv.foundation.lazy.list.items
 import androidx.tv.material3.Text
 import com.example.tvcomposeintroduction.data.Movie
+import com.example.tvcomposeintroduction.ui.components.MovieCard
 
 @Composable
 fun CatalogBrowser(
