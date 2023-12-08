@@ -16,10 +16,13 @@
 
 package com.example.tvcomposeintroduction.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.foundation.lazy.list.TvLazyRow
@@ -37,7 +40,10 @@ fun CatalogBrowser(
     val categoryList by
     catalogBrowserViewModel.categoryList.collectAsState()
 
-    TvLazyColumn(modifier = modifier) {
+    TvLazyColumn(modifier = modifier,
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(horizontal = 48.dp, vertical = 32.dp)
+    ) {
         items(categoryList) { category ->
             Text(text = category.name)
             TvLazyRow {
