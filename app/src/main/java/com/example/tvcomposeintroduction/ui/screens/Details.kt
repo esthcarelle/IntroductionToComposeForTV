@@ -20,13 +20,20 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.tv.material3.ExperimentalTvMaterial3Api
+import coil.compose.AsyncImage
 import com.example.tvcomposeintroduction.data.Movie
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun Details(movie: Movie, modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
-
+        AsyncImage(
+            model = movie.cardImageUrl,
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }
