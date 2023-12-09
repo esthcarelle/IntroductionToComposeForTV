@@ -29,7 +29,6 @@ import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.example.tvcomposeintroduction.data.Movie
 
-@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun Details(movie: Movie, modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
@@ -43,6 +42,12 @@ fun Details(movie: Movie, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .padding(vertical = 32.dp, horizontal = 48.dp)
         ) {
+            Text(
+                text = movie.title,
+            )
+            Text(
+                text = movie.studio,
+            )
             Text(
                 text = movie.title,
             )
