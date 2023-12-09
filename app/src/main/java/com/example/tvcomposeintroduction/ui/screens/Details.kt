@@ -16,6 +16,8 @@
 
 package com.example.tvcomposeintroduction.ui.screens
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.tv.material3.ExperimentalTvMaterial3Api
@@ -24,4 +26,7 @@ import com.example.tvcomposeintroduction.data.Movie
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun Details(movie: Movie, modifier: Modifier = Modifier) {
+    Box(modifier = modifier.fillMaxSize()) {
+
+    }
 }
