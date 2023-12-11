@@ -52,6 +52,7 @@ fun Details(movie: Movie, modifier: Modifier = Modifier) {
             )
             Text(
                 text = movie.title,
+                style = MaterialTheme.typography.headlineMedium
             )
         }
     }
