@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.example.tvcomposeintroduction.data.Movie
@@ -43,6 +44,7 @@ fun Details(movie: Movie, modifier: Modifier = Modifier) {
         ) {
             Text(
                 text = movie.title,
+                style = MaterialTheme.typography.headlineLarge
             )
             Text(
                 text = movie.studio,
