@@ -48,6 +48,7 @@ fun Details(movie: Movie, modifier: Modifier = Modifier) {
             )
             Text(
                 text = movie.studio,
+                style = MaterialTheme.typography.headlineMedium
             )
             Text(
                 text = movie.title,
