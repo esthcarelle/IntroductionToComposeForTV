@@ -49,7 +49,7 @@ fun CatalogBrowser(
             Text(text = category.name)
             TvLazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(category.movieList) { movie ->
-                    MovieCard(movie = movie)
+                    MovieCard(movie = movie,onClick = { onMovieSelected(movie) })
                 }
             }
         }
