@@ -45,13 +45,8 @@ fun CatalogBrowser(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(horizontal = 48.dp, vertical = 32.dp)
     ) {
-        items(categoryList) { category ->
-            Text(text = category.name)
-            TvLazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(category.movieList) { movie ->
-                    MovieCard(movie = movie, onClick = { onMovieSelected(movie) })
-                }
-            }
+        item {
+            val featuredMovieList by catalogBrowserViewModel.featuredMovieList.collectAsState()
         }
     }
 }
