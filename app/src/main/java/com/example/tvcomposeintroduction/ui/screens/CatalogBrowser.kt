@@ -29,7 +29,6 @@ import androidx.tv.foundation.lazy.list.TvLazyRow
 import androidx.tv.foundation.lazy.list.items
 import androidx.tv.material3.Text
 import com.example.tvcomposeintroduction.data.Movie
-import com.example.tvcomposeintroduction.ui.components.MovieCard
 
 @Composable
 fun CatalogBrowser(
