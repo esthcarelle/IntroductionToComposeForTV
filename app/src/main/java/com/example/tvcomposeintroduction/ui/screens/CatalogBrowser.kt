@@ -18,6 +18,8 @@ package com.example.tvcomposeintroduction.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,8 +28,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.material3.Carousel
+import androidx.tv.material3.ExperimentalTvMaterial3Api
 import com.example.tvcomposeintroduction.data.Movie
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun CatalogBrowser(
     modifier: Modifier = Modifier,
@@ -45,7 +49,7 @@ fun CatalogBrowser(
         item {
             val featuredMovieList by catalogBrowserViewModel.featuredMovieList.collectAsState()
             Carousel(
-                slideCount = featuredMovieList.size,
+                itemCount = featuredMovieList.size,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(376.dp)
