@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.foundation.lazy.list.TvLazyColumn
+import androidx.tv.material3.Carousel
 import com.example.tvcomposeintroduction.data.Movie
 
 @Composable
@@ -43,6 +44,19 @@ fun CatalogBrowser(
     ) {
         item {
             val featuredMovieList by catalogBrowserViewModel.featuredMovieList.collectAsState()
+            Carousel(
+                slideCount = featuredMovieList.size,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(376.dp)
+            ) { indexOfCarouselSlide ->
+                val featuredMovie =
+                    featuredMovieList[indexOfCarouselSlide]
+                CarouselSlide {
+                    Text(text = featuredMovie.title)
+                }
+            }
+        }
         }
     }
 }
