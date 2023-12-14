@@ -27,9 +27,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.foundation.lazy.list.TvLazyColumn
+import androidx.tv.foundation.lazy.list.TvLazyRow
+import androidx.tv.foundation.lazy.list.items
 import androidx.tv.material3.Carousel
 import androidx.tv.material3.ExperimentalTvMaterial3Api
+import androidx.tv.material3.Text
 import com.example.tvcomposeintroduction.data.Movie
+import com.example.tvcomposeintroduction.ui.components.MovieCard
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -58,6 +62,17 @@ fun CatalogBrowser(
                     featuredMovieList[indexOfCarouselSlide]
             }
         }
+
+
+        items(categoryList) { category ->
+            Text(text = category.name)
+            TvLazyRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                items(category.movieList) { movie ->
+                    MovieCard(movie = movie, onClick = { onMovieSelected(movie) })
+                }
+            }
         }
     }
 }
