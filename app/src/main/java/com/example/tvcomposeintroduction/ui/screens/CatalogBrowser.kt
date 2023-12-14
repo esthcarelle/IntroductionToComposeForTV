@@ -56,9 +56,6 @@ fun CatalogBrowser(
             ) { indexOfCarouselSlide ->
                 val featuredMovie =
                     featuredMovieList[indexOfCarouselSlide]
-                CarouselSlide {
-                    Text(text = featuredMovie.title)
-                }
             }
         }
         }
